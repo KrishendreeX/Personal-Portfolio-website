@@ -631,17 +631,17 @@ footer {
 
 @media(max-width: 768px) {
     .navbar {
-        width: 90%; /* Slight squeeze to give more breathing room on mobile edges */
+        width: 90%; 
         flex-direction: column;
         gap: 15px;
-        border-radius: 24px; /* Slightly tighter radius looks better stacked */
+        border-radius: 24px; 
         padding: 15px;
         align-items: center;
         text-align: center;
     }
 
     .nav-links {
-        flex-wrap: wrap; /* CRITICAL: If links are too long, they will wrap instead of breaking the box */
+        flex-wrap: wrap; 
         justify-content: center;
         gap: 15px;
         padding: 0;
@@ -652,18 +652,75 @@ footer {
         justify-content: center;
         width: 100%;
     }
+
+    #timeline {
+        flex-direction: column;      
+        gap: 45px;                   
+        border-top: none;            
+        border-left: 3px solid rgba(255, 255, 255, 0.2); 
+        padding-left: 25px;          
+        margin: 40px auto;
+        max-width: 100%;             
+    }
+
+    .entry {
+        text-align: left;            
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .circle {
+        top: 15px;
+        left: -31px;                 
+        transform: none;
+    }
+
+    .content {
+        position: relative;          
+        left: 0;
+        transform: none;
+        width: 100%;                 
+        max-width: 100%;
+        margin-top: 12px;
+        box-sizing: border-box;
+        
+        opacity: 1;            
+        pointer-events: auto;  
+    }
+
+    .entry input:checked ~ .content {
+        transform: translateY(5px);  
+    }
+
+    .contact-content {
+        flex-direction: column;      
+        gap: 35px;                   
+        width: 100%;
+    }
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;                 
+        flex: none;
+    }
+
+    .contact-form form,
+    .contact form {
+        width: 100%;
+        max-width: 100%;             
+    }
 }
 
-@media(max-width: 300px) {
+@media(max-width: 360px) {
     .hero-center h1 {
-        font-size: 15px;
+        font-size: 20px; 
     }
 
     .navbar {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .nav-links {
@@ -677,32 +734,6 @@ footer {
         text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding: 0.75rem 0;
-    }
-}
-
-@keyframes formFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
     }
 }
 
